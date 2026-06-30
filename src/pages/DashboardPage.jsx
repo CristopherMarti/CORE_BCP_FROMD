@@ -34,7 +34,7 @@ export default function DashboardPage() {
   useEffect(() => {
     const cargarDashboard = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/dashboard/kpis', {
+        const response = await fetch('https://core-bcp-backend.onrender.com/api/dashboard/kpis', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         const data = await response.json();

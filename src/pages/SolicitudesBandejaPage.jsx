@@ -45,7 +45,7 @@ export default function SolicitudesBandejaPage() {
   // 2. FUNCIÓN PARA LLAMAR A LA BASE DE DATOS
   const cargarDatos = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/solicitudes/bandeja', {
+      const response = await fetch('https://core-bcp-backend.onrender.com/api/solicitudes/bandeja', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}` // Pase VIP
         }

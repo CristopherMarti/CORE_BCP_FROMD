@@ -36,7 +36,7 @@ export default function SolicitudRegistroPage() {
     const cargarSolicitudEnEvaluacion = async () => {
       try {
         // Consultamos al endpoint de la bandeja del Core Financiero
-        const response = await fetch('http://localhost:8000/api/solicitudes/bandeja', {
+        const response = await fetch('https://core-bcp-backend.onrender.com/api/solicitudes/bandeja', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         const data = await response.json();
@@ -100,7 +100,7 @@ export default function SolicitudRegistroPage() {
     
     try {
       // Usamos el id_prestamo real capturado (31) y disparamos un PUT para avanzar el estado
-      const response = await fetch(`http://localhost:8000/api/solicitudes/${solicitud.id_prestamo}/estado`, {
+      const response = await fetch(`https://core-bcp-backend.onrender.com/api/solicitudes/${solicitud.id_prestamo}/estado`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',

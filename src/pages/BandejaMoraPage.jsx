@@ -16,7 +16,7 @@ export default function BandejaMoraPage() {
   useEffect(() => {
     const fetchBandejaMora = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/recuperaciones/mora', {
+        const response = await fetch('https://core-bcp-backend.onrender.com/api/recuperaciones/mora', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         const data = await response.json();

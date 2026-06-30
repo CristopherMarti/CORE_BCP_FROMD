@@ -22,7 +22,7 @@ export default function SolicitudComitePage() {
   useEffect(() => {
     const fetchCreditoPendiente = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/solicitudes/bandeja', {
+        const response = await fetch('https://core-bcp-backend.onrender.com/api/solicitudes/bandeja', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         const data = await response.json();
@@ -49,7 +49,7 @@ export default function SolicitudComitePage() {
     try {
       const nuevoEstado = decision === 'APROBADO' ? 'Desembolsado' : 'Rechazado';
       
-      const response = await fetch(`http://localhost:8000/api/solicitudes/${solicitud.id_prestamo}/estado`, {
+      const response = await fetch(`https://core-bcp-backend.onrender.com/api/solicitudes/${solicitud.id_prestamo}/estado`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',

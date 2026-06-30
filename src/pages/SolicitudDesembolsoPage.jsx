@@ -29,7 +29,7 @@ export default function SolicitudDesembolsoPage() {
   useEffect(() => {
     const cargarCreditoPendiente = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/solicitudes/bandeja', {
+        const response = await fetch('https://core-bcp-backend.onrender.com/api/solicitudes/bandeja', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         const data = await response.json();
@@ -64,7 +64,7 @@ export default function SolicitudDesembolsoPage() {
     setLoading(true);
     try {
       // Invocamos al motor matemático de tu Core (FastAPI) en el puerto 8000/8001
-      const response = await fetch(`http://localhost:8000/api/solicitudes/calcular-cronograma`, {
+      const response = await fetch(`https://core-bcp-backend.onrender.com/api/solicitudes/calcular-cronograma`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ export default function SolicitudDesembolsoPage() {
   const ejecutarDesembolso = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/solicitudes/${solicitud.id_prestamo}/estado`, {
+      const response = await fetch(`https://core-bcp-backend.onrender.com/api/solicitudes/${solicitud.id_prestamo}/estado`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
