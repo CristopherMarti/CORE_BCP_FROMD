@@ -1,0 +1,26 @@
+:root {
+  /* Paleta Oficial BCP Core */
+  --bcp-azul: #003087;
+  --bcp-azul-oscuro: #002266;
+  --bcp-naranja: #FF6900;
+  --bcp-naranja-hover: #E55E00;
+  
+  /* Grises y Fondos */
+  --bg-app: #F4F6F9;
+  --bg-panel: #FFFFFF;
+  --text-main: #1A1A1A;
+  --text-muted: #666666;
+  --border-light: #E0E6ED;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+} 
